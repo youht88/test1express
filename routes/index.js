@@ -27,8 +27,9 @@ router.get('/', function(req, res, next) {
   .sort({ age: -1 })
   .exec()
   .then((data)=>{
-    console.log(data);
+    //console.log(data);
     res.render('index', { title: data[1].name})
+    //res.json(data);
   })
   .catch(console.error);
 });

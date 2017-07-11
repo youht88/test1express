@@ -6,9 +6,11 @@ let cheerio = require('cheerio');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   request('http://www.jikexueyuan.com/',function(error,response,body){
-     if(error && response.statusCode == 200){
+     if(!error && response.statusCode == 200){
        $ = cheerio.load(body);
-       res.send($)
+       res.send(body)
+     }else{
+       response.end(error);
      }
   })
 });
