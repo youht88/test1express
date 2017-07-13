@@ -10,9 +10,6 @@ router.get('/', function(req, res, next) {
        $ = cheerio.load(body);
        res.end($('#BAIDU_DUP_fp_wrapper').length)
      }else{
-       res.json({a:1,b:2});
-       res.send(body)
-     }else{
        response.end(error);
      }
 
