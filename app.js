@@ -9,6 +9,8 @@ var ejs = require('ejs');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var cheerio = require('./routes/cheerio');
+var db = require('./routes/db');
 
 var app = express();
 
@@ -27,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/cheerio',cheerio);
+app.use('/db',db)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
